@@ -1,0 +1,49 @@
+<div class="container">
+    <h2>Create New Task</h2>
+    <form>
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" [(ngModel)]="title">
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" [(ngModel)]="description"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="dueDate">Due Date:</label>
+        <input type="date" id="dueDate" name="dueDate" (change)="onDueDateChange($event)">
+      </div>
+      <div class="form-group">
+        <label for="owner">Owner:</label>
+        <select id="owner" name="owner" [(ngModel)]="selectedOwner">
+            <option *ngFor="let user of users" [value]="user.name + ' ' + user.lastname">{{ user.name + ' ' + user.lastname }}</option>
+        </select>
+    </div>
+      <div class="form-group">
+        <label for="priority">Priority:</label>
+        <select id="priority" name="priority" [(ngModel)]="priority">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <select id="status" name="status" [(ngModel)]="status">
+          <option value="To Do">To Do</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Done">Done</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" [(ngModel)]="category">
+      </div>
+      <div class="form-group">
+        <label for="attachments">Attachments:</label>
+        <input type="file" id="attachments" name="attachments" (change)="selected($event)" >
+    </div>
+    
+      <button (click)="createTask()">Create Task</button>
+    </form>
+</div>

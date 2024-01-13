@@ -1,0 +1,14 @@
+nav {
+    background-color: #f8f9fa; 
+    padding: 10px;
+  }
+  
+  .container-fluid {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .btn {
+    margin-right: 10px;
+  }
+  
